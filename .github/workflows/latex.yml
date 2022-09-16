@@ -48,10 +48,10 @@ jobs:
         with:
           # Тот самый ключ, который мы указывали в upload-artifact
           name: my_doc
-      - name: Create Release
-        uses: actions/create-release@v1
-        id: create_release
-        env:
+     # - name: Create Release
+     #   uses: actions/create-release@v1
+     #   id: create_release
+     #   env:
      #     # По офф.документации, надо указать GITHUB_TOKEN
      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions
      #   with:
@@ -66,9 +66,9 @@ jobs:
      # Прикладываемые файлы надо заливать отдельным step
       - name: get upload url of release
       - id: get_release
-      uses: bruceadams/get-release@v1.2.3
-      env: ${{ secrets.GITHUB_TOKEN }}
-      html_url: https://github.com/DarkL0gos/github_actions_latex_template/releases/tag/my_docs     
+        uses: bruceadams/get-release@v1.2.3
+        env: ${{ secrets.GITHUB_TOKEN }}
+        html_url: https://github.com/DarkL0gos/github_actions_latex_template/releases/tag/my_docs     
       
       - name: Upload pdf asset
         uses: actions/upload-release-asset@v1
