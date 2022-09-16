@@ -67,7 +67,8 @@ jobs:
       - name: get upload url of release
       - id: get_release
         uses: bruceadams/get-release@v1.2.3
-        env: ${{ secrets.GITHUB_TOKEN }}
+        env: 
+          GITHUB_TOKEN: ${{ github.token }}
         html_url: https://github.com/DarkL0gos/github_actions_latex_template/releases/tag/my_docs     
       
       - name: Upload pdf asset
